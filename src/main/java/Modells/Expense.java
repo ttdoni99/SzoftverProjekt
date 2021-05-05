@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "Expenses")
-public class Expense {
+public class Expense implements TypeInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
