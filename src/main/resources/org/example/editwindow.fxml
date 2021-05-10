@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="350.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.EditWindowController">
+    <children>
+        <TextFlow prefHeight="30.0" prefWidth="200.0" textAlignment="CENTER">
+            <children>
+                <Label text="Szerkesztés">
+                    <font>
+                        <Font size="22.0" />
+                    </font></Label>
+            </children></TextFlow>
+        <HBox visible="false">
+            <children>
+                <Label fx:id="errorMessage" text="Label" textFill="crimson" visible="false"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER">
+            <children>
+                <VBox alignment="BOTTOM_CENTER">
+                    <children>
+                        <Label text="Bevételek" />
+                        <TableView fx:id="incTableInfo" prefHeight="200.0" prefWidth="640.0">
+                            <columns>
+                                <TableColumn fx:id="colIncId" prefWidth="36.0" text="Id" />
+                                <TableColumn fx:id="colIncName" prefWidth="152.0" text="Név" />
+                                <TableColumn fx:id="colIncDate" prefWidth="166.0" text="Hozzáadás Dátuma" />
+                                <TableColumn fx:id="colIncAmount" prefWidth="213.0" text="Összeg (Ft)" />
+                                <TableColumn fx:id="colIncDelete" prefWidth="72.0" style="-fx-alignment: center" text="Töröl" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="240" prefWidth="40.0" />
+                <VBox alignment="BOTTOM_CENTER">
+                    <children>
+                        <Label text="Kiadások" />
+                        <TableView fx:id="expTableInfo" prefHeight="200.0" prefWidth="640">
+                            <columns>
+                                <TableColumn fx:id="colExpId" prefWidth="36.0" text="Id" />
+                                <TableColumn fx:id="colExpName" prefWidth="152.0" text="Név" />
+                                <TableColumn fx:id="colExpDate" prefWidth="166.0" text="Hozzáadás Dátuma" />
+                                <TableColumn fx:id="colExpAmount" prefWidth="213.0" text="Összeg (Ft)" />
+                                <TableColumn fx:id="colExpDelete" prefWidth="72.0" style="-fx-alignment: center" text="Töröl" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Separator prefHeight="30.0" prefWidth="900.0" />
+        <HBox alignment="CENTER">
+            <children>
+                <Button fx:id="listUpdaterButton" mnemonicParsing="false" onAction="#updateLists" text="Lista Frissítése" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
