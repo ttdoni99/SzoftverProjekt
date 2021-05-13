@@ -8,6 +8,10 @@ import Modells.Income;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Main data storage class.
+ * You can store the expenses and the incomes and their distributions here.
+ */
 public class Storage {
     private ArrayList<Expense> arrayListOfExpenses = new ArrayList<>();
     private ArrayList<Income> arrayListOfIncomes = new ArrayList<>();
@@ -17,9 +21,15 @@ public class Storage {
         return getTheSumOfIncomes() - getTheSumOfExpenses();
     }
 
+    /**
+     * No args constructor for Storage class.
+     */
     public Storage() {
     }
 
+    /**
+     * Uses the DistributionCounter class to calculate and load the distributions into the storage.
+     */
     public void calculateDistributionOfExpenses() {
         DistributionCounter<Expense> distributionCounter =
                 new DistributionCounter<>(arrayListOfExpenses);
@@ -27,6 +37,10 @@ public class Storage {
 
     }
 
+    /**
+     * Calculates the distinct names in the storage.
+     * @return a list with the distinct names in the storage.
+     */
     public ArrayList<String> getDistinctNames() {
 
         ArrayList<String> temp = new ArrayList<>();
@@ -92,6 +106,10 @@ public class Storage {
         return getTheSumOfIncomes();
     }
 
+    /**
+     * Calculates and returns the balance.
+     * @return all incomes - all expenses.
+     */
     public Integer getBalance() {
         return Balance();
     }
