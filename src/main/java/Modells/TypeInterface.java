@@ -2,6 +2,10 @@ package Modells;
 
 import java.time.LocalDate;
 
+/**
+ * Interface for modelling an expense/income.
+ * The classes that are implements it can use the generic Distribution counter.
+ */
 public interface TypeInterface {
 
     Integer primaryKey = null;
