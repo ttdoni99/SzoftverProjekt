@@ -7,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-
+/**
+ * Model of an Income. Stores the name of the income.
+ * Stores the date when you got the money and the amount of money that you got.
+ */
 @Data
 @Entity
 @Table(name = "Incomes")
@@ -25,16 +28,32 @@ public class Income implements TypeInterface {
 
     private static Logger logger = LoggerFactory.getLogger("Expense.class");
 
-
+    /**
+     * Public no args constructor.
+     */
     public Income() {
     }
 
+    /**
+     * Creates a new instance of the Expense class.
+     * The recommended constructor for this class.
+     * @param name     the name of the Income.
+     * @param amount   the amount of the Income.
+     * @param dayOfAdd the day of the transaction.
+     */
     public Income(String name, Integer amount, LocalDate dayOfAdd) {
         this.name = nullChecker(name);
         this.amount = nullChecker(amount);
         this.dayOfAdd = nullChecker(dayOfAdd);
     }
 
+    /**
+     * Generic method for checking if the given parameter is not null.
+     * @param param data to set.
+     * @param <T>   anything
+     * @return the parameter
+     * @throws VerifyError if the parameter is null.
+     */
     private <T> T nullChecker(T param) throws VerifyError {
 
         logger.trace("We are checking if date is null");
@@ -55,6 +74,11 @@ public class Income implements TypeInterface {
         return name;
     }
 
+    /**
+     * Sets the name of the transaction.
+     * Uses {@code nullChecker(T param)} to determinate weather the name is valid or null.
+     * @param name the new name of the transaction.
+     */
     public void setName(String name) {
 
         this.name = nullChecker(name);
@@ -64,6 +88,11 @@ public class Income implements TypeInterface {
         return amount;
     }
 
+    /**
+     * Sets the amount of the transaction.
+     * Uses {@code nullChecker(T param)} to determinate weather the name is valid or null.
+     * @param amount new value to override the existing one.
+     */
     public void setAmount(Integer amount) {
 
         Integer temp = nullChecker(amount);
@@ -78,6 +107,11 @@ public class Income implements TypeInterface {
         return dayOfAdd;
     }
 
+    /**
+     * Sets the date of the transaction.
+     * Uses {@code nullChecker(T param)} to determinate weather the date is valid or null.
+     * @param localDate the  new time of the transaction.
+     */
     public void setDayOfAdd(LocalDate localDate) {
 
         this.dayOfAdd = nullChecker(localDate);
