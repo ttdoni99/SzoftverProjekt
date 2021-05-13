@@ -8,6 +8,10 @@ import org.slf4j.LoggerFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+/**
+ * Class for the singleton storage variable. You can access the storage globally.
+ * Loads data to the storage.
+ */
 public class Loader {
     private static Logger logger = LoggerFactory.getLogger("Loader.class");
 
@@ -17,6 +21,9 @@ public class Loader {
 
     public static Storage storage = new Storage();
 
+    /**
+     * Loads everything form the expense table to the storage.
+     */
     public static void loadExpenseTable() {
         try {
             logger.debug("starting to load data");
@@ -30,6 +37,9 @@ public class Loader {
         }
     }
 
+    /**
+     * Loads everything form the income table to the storage.
+     */
     public static void loadIncomeTable() {
         try {
             logger.debug("starting to load data");
